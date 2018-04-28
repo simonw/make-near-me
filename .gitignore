@@ -1,0 +1,6 @@
+.cache
+venv
+__pycache__
+dev-server.sh
+frontend/build
+frontend/node_modules
