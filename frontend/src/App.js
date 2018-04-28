@@ -203,7 +203,7 @@ class App extends Component {
                 </section>
                 <section className="footer">
                     <div className="inner">
-                        <p className="meta">by <a href="https://twitter.com/natbat">Natalie Downe</a> and <a href="https://twitter.com/simonw">Simon Willison</a> using data from <a href="https://www.inaturalist.org/">iNaturalist</a> - <a href="https://github.com/simonw/owlsnearme">README</a></p>
+                        <p className="meta">by <a href="https://twitter.com/natbat">Natalie Downe</a> and <a href="https://twitter.com/simonw">Simon Willison</a> using data from <a href="https://www.inaturalist.org/">iNaturalist</a> - <a href="https://github.com/simonw/make-near-me">Source code</a></p>
                     </div>
                 </section>
             </div>
