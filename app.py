@@ -29,12 +29,12 @@ TEMPLATE = '''
         taxon_plural: {taxon_plural_json_encoded}
     }};
     </script>
-    <link href="https://www.owlsnearme.com/static/css/main.c7de7c0a.css" rel="stylesheet">
+    <link href="https://make-near-me-static.now.sh/main.c7de7c0a.css" rel="stylesheet">
 </head>
 <body class="home">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script type="text/javascript" src="https://www.owlsnearme.com/static/js/main.7109f461.js"></script>
+    <script type="text/javascript" src="https://make-near-me-static.now.sh/main.7109f461.js"></script>
 </body>
 </html>
 '''.strip()
