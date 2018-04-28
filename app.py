@@ -238,6 +238,7 @@ class PublishView(HTTPMethodView):
         # Send it to Zeit API
         deploy_body = {
             'name': hostname,
+            'public': True,
             'files': [{
                 'file': 'index.html',
                 'size': html_size,
@@ -283,7 +284,7 @@ class PublishView(HTTPMethodView):
             return response.json(reply)
         else:
             keen_event(request, 'publish_error', {
-                'msg': deploy_response.content,
+                'msg': str(deploy_response.content),
             }, user=user)
             return response.json({
                 'ok': False,
