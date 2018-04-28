@@ -1,0 +1,9 @@
+{
+    "files": [
+        "frontend/build",
+        "app.py",
+        "templates",
+        "requirements.txt"
+    ],
+    "alias": "make-near-me.now.sh"
+}
