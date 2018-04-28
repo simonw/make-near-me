@@ -671,3 +671,15 @@ button {
 .intro-text p {
 	margin-bottom: 0.8rem;
 }
+
+
+label.big-label {
+	margin-top: 1em;
+	display: block;
+}
+.publish-button {
+	margin-top: 1em;
+}
+.publish-button button {
+	padding: 0.3em 1.4em;
+}

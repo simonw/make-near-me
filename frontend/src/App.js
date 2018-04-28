@@ -182,7 +182,9 @@ class App extends Component {
                                     onChange={this.onHostnameTextChange.bind(this)}
                                     style={{width: '100%'}}
                                 />
-                                <button type="submit" className="submit">Publish</button>
+                                <div className="publish-button">
+                                    <button type="submit" className="submit">Publish</button>
+                                </div>
                             </form>
                         </div>}
                         {this.state.deploy_url && <p><a href={this.state.deploy_url}>{this.state.deploy_url}</a></p>}
