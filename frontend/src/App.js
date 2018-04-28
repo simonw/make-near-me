@@ -86,6 +86,7 @@ class App extends Component {
         ev.preventDefault();
         const info = this.state.speciesInfo;
         const name = info.preferred_common_name || info.name;
+        this.setState({publishing: true});
         post('/publish', {
             taxon_id: this.state.taxonId,
             taxon_plural: this.state.plural,
@@ -125,7 +126,6 @@ class App extends Component {
                         <div className="intro-text">
                             <p>Make <a href="https://www.owlsnearme.com/">Owls Near Me</a> for the species of your choice!</p>
                         </div>
-                        {this.state.publishing && <h1>PUBLIHING</h1>}
                         <form action="/" method="GET" onSubmit={this.onSearchSubmit.bind(this)}>
                             <div className="search-form">
                                 <label><span>Search for a species</span><input
@@ -160,7 +160,13 @@ class App extends Component {
                             </div>
                             <pre style={{display: 'none', color: 'white'}}>{JSON.stringify(this.state.speciesList, null, 2)}</pre>
                         </form>
-                        {info && <div>
+                        {this.state.publishing ? <div>
+                            <h2>Publishing...</h2>
+                            <LoadingDots fill="#B04C5E" style={{
+                                height: '3rem',
+                                width: '100%'
+                            }} />
+                        </div> : (info && !this.state.deploy_url) && <div>
                             <h2>{info.preferred_common_name || info.name}</h2>
                             <p>{info.ancestors.map((a => <span key={a.id}>&nbsp;&middot;&nbsp;<a
                                 onClick={(ev) => {
@@ -188,7 +194,10 @@ class App extends Component {
                                 </div>}
                             </form>
                         </div>}
-                        {this.state.deploy_url && <p><a href={this.state.deploy_url}>{this.state.deploy_url}</a></p>}
+                        {this.state.deploy_url && <div>
+                            <h2><a href={this.state.deploy_url}>{this.state.deploy_url}</a></h2>
+                            {this.state.deploy_message && <p>{this.state.deploy_message}</p>}
+                        </div>}
                     </div>
 
                 </section>
