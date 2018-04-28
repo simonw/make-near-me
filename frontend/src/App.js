@@ -15,7 +15,7 @@ const debounce = (fn, delay) => {
 
 const suggestHostname = (name) => {
     name = name.toLowerCase();
-    name = name.replace(/^\-+/, '');
+    name = name.replace(/^-+/, '');
     name = name.replace(/[^a-z\s-]/g, '');
     name = name.replace(/\s+/g, '-');
     return name + '-near-me';
