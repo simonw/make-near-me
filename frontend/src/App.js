@@ -25,8 +25,8 @@ class App extends Component {
     state = {
         places: [],
         q: '',
-        plural: null,
-        hostname: null,
+        plural: '',
+        hostname: '',
         speciesList: [],
         speciesInfo: null,
         speciesLoading: false,
@@ -122,7 +122,7 @@ class App extends Component {
                     <div className="inner">
                         <h1>Make Near Me</h1>
                         <div className="intro-text">
-                            <p>Make <a href="https://www.owlsnearme.com/" target="_blank">Owls Near Me</a> for the species of your choice!</p>
+                            <p>Make <a href="https://www.owlsnearme.com/">Owls Near Me</a> for the species of your choice!</p>
                         </div>
                         {this.state.publishing && <h1>PUBLIHING</h1>}
                         <form action="/" method="GET" onSubmit={this.onSearchSubmit.bind(this)}>
@@ -145,7 +145,7 @@ class App extends Component {
                                             <a onClick={(ev) => {
                                                 ev.preventDefault();
                                                 this.fetchSpecies(species.id);
-                                            }} target="_blank" href={`https://www.owlsnearme.com/?taxon_id=${species.id}`}>{species.preferred_common_name || species.name}</a>
+                                            }} href={`https://www.owlsnearme.com/?taxon_id=${species.id}`}>{species.preferred_common_name || species.name}</a>
                                             <em> - {species.name}</em>
                                         </div>
                                     })}
@@ -165,7 +165,7 @@ class App extends Component {
                                 onClick={(ev) => {
                                     ev.preventDefault();
                                     this.fetchSpecies(a.id);
-                                }} target="_blank" href={`https://www.owlsnearme.com/?taxon_id=${a.id}`}
+                                }} href={`https://www.owlsnearme.com/?taxon_id=${a.id}`}
                             >{a.preferred_common_name || a.name}
                             </a></span>))}</p>
                             <form action="/" method="POST" onSubmit={this.onPublishSubmit.bind(this)}>
