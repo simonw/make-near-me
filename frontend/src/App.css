@@ -676,9 +676,11 @@ button {
 label.big-label {
 	margin-top: 1em;
 	display: block;
+	font-size: 1.2em;
+	margin-bottom: 0.4em;
 }
 .publish-button {
-	margin-top: 1em;
+	margin-top: 2em;
 }
 .publish-button button {
 	padding: 0.3em 1.4em;

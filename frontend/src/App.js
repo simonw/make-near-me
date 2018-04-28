@@ -116,6 +116,7 @@ class App extends Component {
         const suggested_hostname = (
             info ? (this.state.hostname || suggestHostname(this.state.plural || name)) : null
         );
+        const uppercased = this.state.plural && (this.state.plural[0].toUpperCase() + this.state.plural.substr(1));
         return (
             <div>
                 <section className="primary">
@@ -182,9 +183,9 @@ class App extends Component {
                                     onChange={this.onHostnameTextChange.bind(this)}
                                     style={{width: '100%'}}
                                 />
-                                <div className="publish-button">
-                                    <button type="submit" className="submit">Publish</button>
-                                </div>
+                                {this.state.plural && <div className="publish-button">
+                                    <button type="submit" className="submit">Publish {uppercased} Near Me!</button>
+                                </div>}
                             </form>
                         </div>}
                         {this.state.deploy_url && <p><a href={this.state.deploy_url}>{this.state.deploy_url}</a></p>}
@@ -202,7 +203,6 @@ class App extends Component {
 }
 
 export default App;
-
 
 
 const LoadingDots = (props) => {
